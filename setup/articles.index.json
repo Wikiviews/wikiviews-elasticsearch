@@ -1,0 +1,24 @@
+{
+    "settings": {
+        "number_of_shards": 10,
+        "number_of_replicas": 0
+      },
+    "mappings": {
+        "article": {
+            "properties": {
+                "article": { "type": "string" },
+                "exact_article": {
+                    "type":  "string",
+                    "index": "not_analyzed"
+                },
+                "views": {
+                    "type": "nested",
+                    "properties": {
+                        "date": { "type": "date", "format": "strict_date_time" },
+                        "views": { "type": "long" }
+                    }
+                }
+            }
+        }
+    }
+}
