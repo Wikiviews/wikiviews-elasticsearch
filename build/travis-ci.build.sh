@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-COMMIT=${TRAVIS_COMMIT::8}
+COMMIT=$(echo $TRAVIS_COMMIT | cut -b1-7)
+echo $TRAVIS_COMMIT
+echo $COMMIT
+echo $TRAVIS_TAG
 
 if [ ${TRAVIS_TAG+x} ]
 then
