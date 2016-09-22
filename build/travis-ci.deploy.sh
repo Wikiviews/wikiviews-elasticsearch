@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ${TRAVIS_TAG+x} ]
+if [ $TRAVIS_TAG ]
 then
     echo "Deploy to Docker Hub: $REPO"
     docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
