@@ -71,7 +71,7 @@ docker pull wikiviews/wikiviews-elasticsearch
 ```
 This image is automatically generated for each repository tag via [Travis-CI](https://travis-ci.org/Wikiviews/wikiviews-elasticsearch) ([![Build Status](https://travis-ci.org/Wikiviews/wikiviews-elasticsearch.svg?branch=master)](https://travis-ci.org/Wikiviews/wikiviews-elasticsearch)).
 
-The official image has a pre-configured heap size of 4GB. Make sure your host system has at least 8GB of RAM or [build your own image](#building-your-own-image) and adapt the `ES_HEAP_SIZE` variable in the `Dockerfile` to about the half of your systems RAM. 
+The official image has a pre-configured heap size of 4GB. Make sure your host system has at least 8GB of RAM or [build your own image](#building-your-own-image) and adapt the `ES_HEAP_SIZE` variable in the `Dockerfile` to about the half of your systems RAM. It is also possible to [set the `ES_HEAP_SIZE` variable, when running the container](https://docs.docker.com/engine/reference/run/#/env-environment-variables).
 
 #### Building your own image
 If you want to change the configuration of elasticsearch, use your own tag, etc. you can build your own image from this repository.<br>
