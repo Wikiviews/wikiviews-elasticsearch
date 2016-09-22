@@ -25,11 +25,9 @@ if [ "$1" = 'elasticsearch' ]; then
         else
             # unset the command and start setup
             unset $@
-            set "echo Setup Done" "$@"
-
             echo Start Setup
             gosu elasticsearch elasticsearch &
-            sleep 15 && curl -XPOST "localhost:9200/wikiviews" --retry 10 --retry-delay 5 --data-binary "@/usr/share/elasticsearch/setup/wikiviews.index.json" && echo 'true' > /SETUP_FLAG
+            sleep 15 && curl -XPOST "localhost:9200/wikiviews" --retry 10 --retry-delay 5 --data-binary "@/usr/share/elasticsearch/setup/wikiviews.index.json" && sleep 15 && echo 'true' > /SETUP_FLAG && echo "Setup Done"
         fi
 fi
 
