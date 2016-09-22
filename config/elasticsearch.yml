@@ -7,6 +7,8 @@ action:
 index:
   mapper:
     dynamic: false
+  recovery:
+    initial_shards: full
 
 cluster:
   name: wikiviews-es-cluster
